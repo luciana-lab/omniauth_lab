@@ -1,7 +1,10 @@
 <p>We will put omniauth authentication data here (if present)</p>
 
-<% if name = session[:name] %>
-  <p>Welcome <%= name -%>! We know who you are thanks to Omniauth!</p>
+<%# if session[:nickname] %>
+<% if session[:name] %>
+  <p>Welcome 
+  <%=  session[:name] -%><%#=  session[:nickname] -%>! 
+  We know who you are thanks to Omniauth!</p>
   <p>You were authenticated by  <%= session[:omniauth_data]['provider'] %></p>
 
   The raw data returned from Omniauth were:
